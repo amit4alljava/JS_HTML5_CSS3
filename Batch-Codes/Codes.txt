@@ -1,0 +1,19 @@
+function add(){
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+if(typeof arguments[i]==="string"){
+sum = sum + parseInt(arguments[i]);
+}
+else
+if(typeof arguments[i]==="function"){
+sum = sum + arguments[i]();
+}
+else{
+sum = sum +arguments[i];
+}
+}
+return sum;
+}
+
+***********************************************************
+
