@@ -1,0 +1,235 @@
+
+undefined
+typeof Employee;
+"function"
+var mike = new Employee(1001,'Mike',9090);
+undefined
+typeof mike;
+"object"
+mike instanceof Employee;
+true
+var tom = new Employee(1002,'Tom',8888);
+undefined
+mike;
+Employee {id: 1001, name: "Mike", salary: 9090}
+tom;
+Employee {id: 1002, name: "Tom", salary: 8888}
+mike.bonus=999;
+999
+mike;
+Employee {id: 1001, name: "Mike", salary: 9090, bonus: 999}
+tom;
+Employee {id: 1002, name: "Tom", salary: 8888}
+delete mike.salary;
+true
+mike;
+Employee {id: 1001, name: "Mike", bonus: 999}
+tom;
+Employee {id: 1002, name: "Tom", salary: 8888}
+Employee.prototype.age = 0;
+0
+mike;
+Employee {id: 1001, name: "Mike", bonus: 999, age: 0}
+tom;
+Employee {id: 1002, name: "Tom", salary: 8888, age: 0}
+console.dir(Employee);
+VM428:2 function Employee(id,name,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}arguments: nullcaller: nulllength: 3name: "Employee"prototype: Employeeage: 0constructor: function Employee(id,name,salary){__proto__: Object__defineGetter__: function __defineGetter__() { [native code] }__defineSetter__: function __defineSetter__() { [native code] }__lookupGetter__: function __lookupGetter__() { [native code] }__lookupSetter__: function __lookupSetter__() { [native code] }constructor: function Object() { [native code] }hasOwnProperty: function hasOwnProperty() { [native code] }isPrototypeOf: function isPrototypeOf() { [native code] }propertyIsEnumerable: function propertyIsEnumerable() { [native code] }toLocaleString: function toLocaleString() { [native code] }toString: function toString() { [native code] }valueOf: function valueOf() { [native code] }get __proto__: function __proto__() { [native code] }set __proto__: function __proto__() { [native code] }__proto__: function Empty() {}apply: function apply() { [native code] }arguments: nullbind: function bind() { [native code] }call: function call() { [native code] }caller: nullconstructor: function Function() { [native code] }length: 0name: "Empty"toString: function toString() { [native code] }__proto__: Object<function scope><function scope>
+undefined
+Employee.prototype.show=function(){
+console.log("Id "+this.id+" Name "+this.name+" Salary "+this.salary);
+}
+function (){
+console.log("Id "+this.id+" Name "+this.name+" Salary "+this.salary);
+}
+function show(){
+
+}
+undefined
+var d = function(){
+}
+undefined
+typeof d;
+"function"
+function print(){
+console.log("Print Call");
+}
+undefined
+Employee.prototype.myprint=print;
+function print(){
+console.log("Print Call");
+}
+mike.show();
+VM477:3 Id 1001 Name Mike Salary undefined
+undefined
+mike;
+Employee {id: 1001, name: "Mike", bonus: 999, age: 0, show: function…}
+mike.myprint();
+VM584:3 Print Call
+undefined
+mike;
+Employee {id: 1001, name: "Mike", bonus: 999, age: 0, show: function…}
+tom;
+Employee {id: 1002, name: "Tom", salary: 8888, age: 0, show: function…}
+mike.disp=function(){
+console.log("this is for Mike");
+}
+function (){
+console.log("this is for Mike");
+}
+mike.disp();
+VM715:3 this is for Mike
+undefined
+var obj = {id:1001,name:'Ram'};
+undefined
+obj;
+Object {id: 1001, name: "Ram"}
+mike;
+Employee {id: 1001, name: "Mike", bonus: 999, disp: function, age: 0…}
+var maths={};
+undefined
+maths.add=function(){
+}
+function (){
+}
+maths.power={};
+Object {}
+maths.power=function(){
+}
+
+function (){
+}
+maths.add();
+undefined
+maths.power();
+undefined
+Employee.output=function(){
+console.log("Function ");
+}
+function (){
+console.log("Function ");
+}
+Employee.output();
+VM930:3 Function 
+undefined
+console.dir(Employee);
+VM987:2 function Employee(id,name,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}arguments: nullcaller: nulllength: 3name: "Employee"output: function (){prototype: Employeeage: 0constructor: function Employee(id,name,salary){myprint: function print(){show: function (){__proto__: Object__proto__: function Empty() {}<function scope>
+undefined
+mike;
+Employee {id: 1001, name: "Mike", bonus: 999, disp: function, age: 0…}
+function disp(){
+console.log("this is Just a Function "+this.name);
+}
+undefined
+disp.myf1=function(){
+}
+function (){
+}
+disp.myf1();
+undefined
+disp.call(mike);
+VM1046:3 this is Just a Function Mike
+undefined
+disp.call(tom);
+VM1046:3 this is Just a Function Tom
+undefined
+function disp(x,y){
+console.log("this is Just a Function "+this.name+ " "+x+" "+y);
+}
+undefined
+disp.call(tom,90, 78);
+VM1203:3 this is Just a Function Tom 90 78
+undefined
+var  z = disp.bind(tom);
+undefined
+z(100,200);
+VM1203:3 this is Just a Function Tom 100 200
+undefined
+var obj = {id:1001, disp:function(){
+console.log("Disp Call ");
+}}
+undefined
+obj;
+Object {id: 1001, disp: function}
+obj.disp();
+VM1279:3 Disp Call 
+undefined
+obj["disp"]();
+VM1279:3 Disp Call 
+undefined
+x="disp";
+"disp"
+obj[x]();
+VM1279:3 Disp Call 
+undefined
+var s=[100,200,300];
+undefined
+s.push(4444);
+4
+s;
+[100, 200, 300, 4444]
+s.slice(1,1);
+[]
+s;
+[100, 200, 300, 4444]
+s.splice(1,1);
+[200]
+s;
+[100, 300, 4444]
+s.splice(1,2);
+[300, 4444]
+s;
+[100]
+s[0]=5555;
+5555
+s.push(4444);
+2
+s.push(4555);
+3
+s;
+[5555, 4444, 4555]
+for(var i=0; i<s.length; i++){
+console.log(s[i]);
+}
+VM1551:3 5555
+VM1551:3 4444
+VM1551:3 4555
+undefined
+s.forEach(function(currentElement,index){
+console.log("CurrentElement "+currentElement +" Index "+index);
+});
+VM1615:3 CurrentElement 5555 Index 0
+VM1615:3 CurrentElement 4444 Index 1
+VM1615:3 CurrentElement 4555 Index 2
+undefined
+s.sort();
+[4444, 4555, 5555]
+s.sort(function(a,b){
+return b - a;
+});
+[5555, 4555, 4444]
+s.reverse();
+[4444, 4555, 5555]
+a= 100
+100
+b = 200
+200
+a+b;
+300
+a "+" b
+VM1727:2 Uncaught SyntaxError: Unexpected string
+a "Hello" b
+VM1743:2 Uncaught SyntaxError: Unexpected string
+a +"Hello"+ b
+"100Hello200"
+a +"+"+ b
+"100+200"
+eval(a+"+"+b)
+300
