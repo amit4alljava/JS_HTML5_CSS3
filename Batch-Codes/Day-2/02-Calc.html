@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator - 1</title>
+    <script>
+        window.addEventListener("load", init);
+        var txtNumber1 = null,
+                txtNumber2 = null;
+        function init(){
+            document.getElementById("btnAdd").addEventListener("click", onCalculate);
+            document.getElementById("btnSubtract").addEventListener("click", onCalculate);
+            document.getElementById("btnMultiply").addEventListener("click", onCalculate);
+            document.getElementById("btnDivide").addEventListener("click", onCalculate);
+            txtNumber1 = document.getElementById("txtNumber1");
+            txtNumber2 = document.getElementById("txtNumber2");
+        };
+        function onCalculate(event){
+            var btnValue = event.srcElement.value;
+            var number1 = parseInt(txtNumber1.value),
+                    number2 = parseInt(txtNumber2.value);
+            switch (btnValue) {
+                case "Add":
+                    result = number1 + number2;
+                    break;
+                case "Subtract":
+                    result = number1 - number2;
+                    break;
+                case "Multiply":
+                    result = number1 * number2;
+                    break;
+                case "Divide":
+                    result = number1 / number2;
+                    break;
+            }
+            document.getElementById("divResult").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txtNumber1">
+<input type="text" name="" id="txtNumber2">
+<br>
+<input type="button" value="Add" id="btnAdd">
+<input type="button" value="Subtract" id="btnSubtract">
+<input type="button" value="Multiply" id="btnMultiply">
+<input type="button" value="Divide" id="btnDivide">
+<div id="divResult">[Result goes here]</div>
+</body>
+</html>

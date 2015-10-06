@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator - 1</title>
+    <script>
+        window.addEventListener("load", init);
+        var txtNumber1 = null,
+                txtNumber2 = null;
+        function init(){
+            document.getElementById("btnAdd").addEventListener("click", doCalc);
+            document.getElementById("btnSubtract").addEventListener("click", doCalc);
+            document.getElementById("btnMultiply").addEventListener("click", doCalc);
+            document.getElementById("btnDivide").addEventListener("click", doCalc);
+            txtNumber1 = document.getElementById("txtNumber1");
+            txtNumber2 = document.getElementById("txtNumber2");
+        };
+        function doCalc(event){
+            var operation = event.srcElement.getAttribute("data-operation");
+            var firstNum = txtNumber1.value;
+            var secondNum = txtNumber2.value;
+            var result = eval(firstNum+operation+secondNum);
+            document.getElementById("divResult").innerHTML=result;
+        }
+
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txtNumber1">
+<input type="text" name="" id="txtNumber2">
+<br>
+<input type="button" value="Add" id="btnAdd" data-operation="+" >
+<input type="button" value="Subtract" id="btnSubtract" data-operation="-" >
+<input type="button" value="Multiply" id="btnMultiply" data-operation="*">
+<input type="button" value="Divide" id="btnDivide" data-operation="/">
+<div id="divResult">[Result goes here]</div>
+</body>
+</html>

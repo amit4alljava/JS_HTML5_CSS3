@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator - 1</title>
+    <script>
+        window.addEventListener("load", init);
+        var calculator = {
+            add : function(n1, n2){
+                return n1 + n2;
+            },
+            subtract : function(n1, n2){
+                return n1 - n2;
+            },
+            multiply : function(n1, n2){
+                return n1 * n2;
+            },
+            divide : function(n1, n2){
+                return n1 / n2;
+            }
+        };
+        var txtNumber1 = null,
+                txtNumber2 = null;
+        function init(){
+            document.getElementById("btnAdd").addEventListener("click", onCalculate);
+            document.getElementById("btnSubtract").addEventListener("click", onCalculate);
+            document.getElementById("btnMultiply").addEventListener("click", onCalculate);
+            document.getElementById("btnDivide").addEventListener("click", onCalculate);
+            txtNumber1 = document.getElementById("txtNumber1");
+            txtNumber2 = document.getElementById("txtNumber2");
+        };
+        function onCalculate(evt){
+            var operation = evt.srcElement.getAttribute("data-operation");
+            var number1 = parseInt(txtNumber1.value),
+                    number2 = parseInt(txtNumber2.value );
+            var result = calculator[operation](number1, number2);
+            document.getElementById("divResult").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txtNumber1">
+<input type="text" name="" id="txtNumber2">
+<br>
+<input type="button" value="Add" id="btnAdd" data-operation="add">
+<input type="button" value="Subtract" id="btnSubtract" data-operation="subtract">
+<input type="button" value="Multiply" id="btnMultiply" data-operation="multiply">
+<input type="button" value="Divide" id="btnDivide" data-operation="divide">
+<div id="divResult">[Result goes here]</div>
+</body>
+</html>
