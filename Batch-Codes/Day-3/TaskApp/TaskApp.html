@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <label>TaskName </label>
+            <input type="text" id="taskName" class="form-control" placeholder="Type Task" autofocus>
+            <label>TaskDesc </label>
+            <input type="text" id="taskDesc" class="form-control" placeholder="Type Task Desc" >
+            <input type="color">
+            <button id="add" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign">Add Task</button>
+            <button id="save" class="btn btn-success"><span class="glyphicon glyphicon-floppy-save"></span> Save All Task</button>
+        </div>
+
+<!--<p onclick="$(this).hide(2000)">Hello this is JQuery</p>-->
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <ul id="taskul">
+
+            </ul>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
